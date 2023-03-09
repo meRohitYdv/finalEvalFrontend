@@ -1,0 +1,12 @@
+/* "flex flex-col justify-center items-center min-h-screen" */
+
+.notFoundPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.notFoundPage p{
+    font-size: xx-large;
+}

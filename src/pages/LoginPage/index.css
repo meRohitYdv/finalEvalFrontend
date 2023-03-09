@@ -1,0 +1,9 @@
+/* "h-screen flex flex-col justify-center items-center" */
+
+.loginPage{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
