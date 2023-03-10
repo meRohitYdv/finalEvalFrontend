@@ -19,3 +19,18 @@ export const ADD_CONTENT_FIELD = {
   url: "contents/addField",
   method: "post",
 };
+
+export const ADD_CONTENT = {
+  url: "contents/create",
+  method: "post",
+};
+
+export const UPDATE_CONTENT_NAME = {
+  url: "contents/updateName",
+  method: "patch",
+};
+
+export const DELETE_CONTENT_FIELD = {
+  url: "contents/deleteField",
+  method: "delete",
+};

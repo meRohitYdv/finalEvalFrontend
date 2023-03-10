@@ -1,3 +1,6 @@
+/* eslint-disable import/order */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -8,9 +11,12 @@ import {
   SERVER_BACKEND_URL,
 } from "../../constants/apiEndPoints";
 import makeRequest from "../../utils/makeRequest";
+import { useNavigate } from "react-router-dom";
+import { COLLECTIONS_ROUTE } from "../../constants/routes";
 
 export default function NavBar() {
   const [contentList, setContentList] = React.useState();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     makeRequest(
@@ -25,6 +31,10 @@ export default function NavBar() {
     });
   }, []);
 
+  function handleContentListClick(contentName) {
+    navigate(COLLECTIONS_ROUTE);
+  }
+
   return (
     <div className="navBar">
       <p className="navBarTitle">CMS+</p>
@@ -35,7 +45,14 @@ export default function NavBar() {
       <ul>
         {contentList ? (
           contentList.map((item, index) => (
-            <li key={index}>{item.contentName}</li>
+            <li
+              key={index}
+              onClick={() => {
+                handleContentListClick(item);
+              }}
+            >
+              {item.contentName}
+            </li>
           ))
         ) : (
           <p />
