@@ -19,9 +19,7 @@ function App() {
             path={HOME_ROUTE}
             element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
-          {isLoggedIn && (
-            <Route path={LANDING_ROUTE} element={<LandingPage />} />
-          )}
+          <Route path={LANDING_ROUTE} element={<LandingPage />} />
           <Route path={`${ERROR_ROUTE}/:errorCode?`} element={<ErrorPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

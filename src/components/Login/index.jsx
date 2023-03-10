@@ -12,12 +12,12 @@ import { ERROR_ROUTE, LANDING_ROUTE } from "../../constants/routes";
 import "./index.css";
 
 export default function Login({ setIsLoggedIn }) {
-  const [username, setUsername] = React.useState("");
+  const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const navigate = useNavigate();
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -26,14 +26,14 @@ export default function Login({ setIsLoggedIn }) {
     event.preventDefault();
     try {
       const userData = await makeRequest(AUTH_BACKEND_URL, AUTHENTICATE_USER, {
-        data: { username, password },
+        data: { email, password },
       });
       localStorage.setItem("accessToken", userData.accessToken);
       setIsLoggedIn(true);
       navigate(LANDING_ROUTE);
     } catch (e) {
       if (e.response?.status === 400) {
-        alert("Invalid id or password.");
+        alert("Invalid email or password.");
       } else if (e.response?.status) {
         navigate(`${ERROR_ROUTE}/${e.response.status}`);
       } else {
@@ -47,9 +47,9 @@ export default function Login({ setIsLoggedIn }) {
   return (
     <div className="loginContainer">
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label className="loginUsernameLabel">
-          <p>Username</p>
-          <input type="text" value={username} onChange={handleUsernameChange} />
+        <label className="loginEmailLabel">
+          <p>Email</p>
+          <input type="text" value={email} onChange={handleEmailChange} />
         </label>
         <label className="loginPasswordLabel">
           <p>Password</p>
