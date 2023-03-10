@@ -1,0 +1,13 @@
+.contentTypes{
+    flex:none;
+    width: 75%;
+}
+.contentTypesBody{
+    display: flex;
+    height: 100%;
+}
+.contentTypesHeading{
+    margin: 0px;
+    padding: 20px 0px 20px 25px;
+    font-size: x-large;
+}

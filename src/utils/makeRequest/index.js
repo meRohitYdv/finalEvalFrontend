@@ -11,7 +11,7 @@ const makeRequest = async (
     url: apiEndPoint.url,
     method: apiEndPoint.method,
     ...dynamicConfig,
-    headers,
+    ...headers,
   };
   const { data } = await axios(requestDetails);
   return data;

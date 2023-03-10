@@ -1,0 +1,40 @@
+.contentList{
+    width: 40%;
+    background-color: rgb(104, 92, 115);
+    height: 100%;
+}
+.contentListHeader{
+    display: flex;
+    font-size: medium;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+.contentListHeader img{
+    height: 30px;
+    width: 30px;
+}
+.contentListNewTypeButton{
+    background-color: aliceblue;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+.contentListFieldListItems{
+    background-color: aliceblue;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+.contentListFieldListContainer{
+    display: flex;
+    flex-direction: col;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
