@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
-export default function Collections() {
+export default function Collections({ contentName }) {
   return (
     <div className="collectionsName">
-      <p>This is Collections</p>
+      <p>{contentName}</p>
     </div>
   );
 }

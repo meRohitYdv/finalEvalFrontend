@@ -25,11 +25,15 @@ function App() {
             path={HOME_ROUTE}
             element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
-          <Route path={LANDING_ROUTE} element={<LandingPage />} />
-          <Route
-            path={`${COLLECTIONS_ROUTE}/:collectionName`}
-            element={<CollectionsPage />}
-          />
+          {isLoggedIn && (
+            <Route path={LANDING_ROUTE} element={<LandingPage />} />
+          )}
+          {isLoggedIn && (
+            <Route
+              path={`${COLLECTIONS_ROUTE}/:contentName?`}
+              element={<CollectionsPage />}
+            />
+          )}
           <Route path={`${ERROR_ROUTE}/:errorCode?`} element={<ErrorPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
